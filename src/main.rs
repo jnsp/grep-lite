@@ -1,9 +1,7 @@
 use clap::{App, Arg};
 use regex::Regex;
 use std::fs::File;
-use std::io;
-use std::io::BufRead;
-use std::io::BufReader;
+use std::io::{self, BufRead, BufReader};
 
 fn process_lines<T: BufRead + Sized>(reader: T, re: Regex) {
     for line_ in reader.lines() {
